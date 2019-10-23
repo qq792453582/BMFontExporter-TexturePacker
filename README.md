@@ -10,3 +10,12 @@
 ![set_prefernces](/snapshot/texturepacker-preferences.jpg)
 * Use BMFont Exporter
 ![set_prefernces](/snapshot/use-bmfont-exporter.jpg)
+
+# Note
+
+* Please use a single letter as the name of the sprite
+
+# Reference 
+
+* https://www.cnblogs.com/cg-yun/p/4110762.html
+* https://www.codeandweb.com/texturepacker/documentation/custom-exporter
