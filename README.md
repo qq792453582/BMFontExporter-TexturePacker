@@ -1,7 +1,7 @@
 # BMFontExporter-TexturePacker
  BMFont Exporter for Texturepacker
 
-# Install
+# Get started
 
 * Create a directory - it's the Exporter Directory that will contain all your custom exporters - e.g. my-TP-Exporters.
 * Open you Exporter Directory my-TP-Exporters
@@ -13,6 +13,7 @@
 
 # Note
 
+* Custom export is only for texturepacker pro
 * Please use a single letter as the name of the sprite
 
 # Reference 
