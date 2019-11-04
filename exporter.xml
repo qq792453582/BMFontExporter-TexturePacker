@@ -28,7 +28,7 @@
                <name>fnt</name>
 
                <!-- human readable name (used in the TexturePacker GUI) -->
-               <displayName>fnt</displayName>
+               <displayName>bmfont file</displayName>
 
                <!-- file extension, without '.' -->
                <fileExtension>fnt</fileExtension>
