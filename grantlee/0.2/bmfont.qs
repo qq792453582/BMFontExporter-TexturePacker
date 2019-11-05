@@ -19,12 +19,9 @@ function exporter(_root) {
 
 exporter.prototype = {
     writeHead: function () {
-        return "info face=\"" + this.tp.exporterProperties.face + "\""
-            + " size=" + this.lineHeight + " bold=0 italic=0 charset=\"\" unicode=0 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0"
+        return "info face=\"" + this.tp.exporterProperties.face + "\"" + " size=" + this.lineHeight + " bold=0 italic=0 charset=\"\" unicode=0 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0"
             + "\n"
-            + "common lineHeight=" + this.lineHeight
-            + " base=26 scaleW=" + this.tp.texture.size.width
-            + " scaleH=" + this.tp.texture.size.height + " pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0"
+            + "common lineHeight=" + this.lineHeight + " base=26 scaleW=" + this.tp.texture.size.width + " scaleH=" + this.tp.texture.size.height + " pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0"
     },
 
     writePages: function () {
@@ -46,15 +43,7 @@ exporter.prototype = {
     },
 
     writeChar: function (sprite) {
-        return "char id=" + sprite.trimmedName.charCodeAt(0)
-            + " x=" + sprite.frameRect.x
-            + " y=" + sprite.frameRect.y
-            + " width=" + sprite.untrimmedSize.width
-            + " height=" + sprite.untrimmedSize.height
-            + " xoffset=" + sprite.sourceRect.x
-            + " yoffset=" + (this.lineHeight - sprite.frameRect.height) / 2
-            + " xadvance=" + sprite.frameRect.width
-            + " page=0 chnl=0 letter=\"" + sprite.trimmedName + "\""
+        return "char id=" + sprite.trimmedName.charCodeAt(0) + " x=" + sprite.frameRect.x + " y=" + sprite.frameRect.y + " width=" + sprite.untrimmedSize.width + " height=" + sprite.untrimmedSize.height + " xoffset=" + sprite.sourceRect.x + " yoffset=" + (this.lineHeight - sprite.frameRect.height) / 2 + " xadvance=" + sprite.frameRect.width + " page=0 chnl=0 letter=\"" + sprite.trimmedName + "\""
     },
 
     toString: function () {
