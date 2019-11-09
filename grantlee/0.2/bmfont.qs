@@ -1,10 +1,10 @@
-const exportData = function (_root) {
+const ExportData = function (_root) {
     const bmfont = new exporter(_root);
     return bmfont.toString();
 };
 
-exportData.filterName = "exportData";
-Library.addFilter("exportData");
+ExportData.filterName = "ExportData";
+Library.addFilter("ExportData");
 
 function exporter(_root) {
     this.tp = _root;
@@ -18,37 +18,37 @@ function exporter(_root) {
 }
 
 exporter.prototype = {
-    writeHead: function () {
+    common: function () {
         return "info face=\"" + this.tp.exporterProperties.face + "\"" + " size=" + this.lineHeight + " bold=0 italic=0 charset=\"\" unicode=0 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0"
             + "\n"
             + "common lineHeight=" + this.lineHeight + " base=26 scaleW=" + this.tp.texture.size.width + " scaleH=" + this.tp.texture.size.height + " pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0"
     },
 
-    writePages: function () {
-        return this.writePage();
+    spriteLines: function () {
+        return this.page();
     },
 
-    writePage: function () {
+    page: function () {
         for (var i = 0; i < this.tp.allSprites.length; i++) {
             str += "\n"
-                + this.writeChar(this.tp.allSprites[i])
+                + this.char(this.tp.allSprites[i])
         }
-        return this.writePageHead() + str;
+        return this.pageHead() + str;
     },
 
-    writePageHead: function () {
+    pageHead: function () {
         return "page id=0 file=\"" + this.tp.texture.fullName + "\""
             + "\n"
             + "chars count=" + this.tp.allSprites.length;
     },
 
-    writeChar: function (sprite) {
+    char: function (sprite) {
         return "char id=" + sprite.trimmedName.charCodeAt(0) + " x=" + sprite.frameRect.x + " y=" + sprite.frameRect.y + " width=" + sprite.untrimmedSize.width + " height=" + sprite.untrimmedSize.height + " xoffset=" + sprite.sourceRect.x + " yoffset=" + (this.lineHeight - sprite.frameRect.height) / 2 + " xadvance=" + sprite.frameRect.width + " page=0 chnl=0 letter=\"" + sprite.trimmedName + "\""
     },
 
     toString: function () {
-        return this.writeHead()
+        return this.common()
             + "\n"
-            + this.writePages();
+            + this.spriteLines();
     }
 }

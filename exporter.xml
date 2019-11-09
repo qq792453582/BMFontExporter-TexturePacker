@@ -25,10 +25,10 @@
                a commandline option "- -MYDATA-file" is evaluated
                (remark: write the option without the blank between the "-" signs,
                it's required in the XML comment)  -->
-            <name>fnt</name>
+            <name>bmfont</name>
 
             <!-- human readable name (used in the TexturePacker GUI) -->
-            <displayName>bmfont file</displayName>
+            <displayName>BMFont file</displayName>
 
             <!-- file extension, without '.' -->
             <fileExtension>fnt</fileExtension>
