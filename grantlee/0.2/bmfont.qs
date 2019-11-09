@@ -29,6 +29,7 @@ exporter.prototype = {
     },
 
     page: function () {
+        var str = ""
         for (var i = 0; i < this.tp.allSprites.length; i++) {
             str += "\n"
                 + this.char(this.tp.allSprites[i])
