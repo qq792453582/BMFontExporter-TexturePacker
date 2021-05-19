@@ -18,10 +18,12 @@ function exporter(_root) {
 }
 
 exporter.prototype = {
-    common: function () {
+    info: function () {
         return "info face=\"" + this.tp.exporterProperties.face + "\"" + " size=" + this.lineHeight + " bold=0 italic=0 charset=\"\" unicode=0 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0"
-            + "\n"
-            + "common lineHeight=" + this.lineHeight + " base=26 scaleW=" + this.tp.texture.size.width + " scaleH=" + this.tp.texture.size.height + " pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0"
+    },
+
+    common: function () {
+        return "common lineHeight=" + this.lineHeight + " base=26 scaleW=" + this.tp.texture.size.width + " scaleH=" + this.tp.texture.size.height + " pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0"
     },
 
     spriteLines: function () {
@@ -48,8 +50,8 @@ exporter.prototype = {
     },
 
     toString: function () {
-        return this.common()
-            + "\n"
+        return this.info() + "\n"
+            + this.common() + " key=" + this.tp.smartUpdateKey + " \n"
             + this.spriteLines();
     }
 }
